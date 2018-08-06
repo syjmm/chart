@@ -30,7 +30,25 @@
         },
         series: [{
             data: [120, 200, 150, 80, 70, 110, 130],
-            type: 'bar'
+            type: 'bar',
+            barWidth: 20,
+             itemStyle: {
+                
+                barBorderRadius: 20,
+               color: {
+                    type: 'linear',
+                    x: 0,
+                    y: 0,
+                    x2: 0,
+                    y2: 1,
+                    colorStops: [{
+                        offset: 0, color: '#f37404' // 0% 处的颜色
+                    }, {
+                        offset: 1, color: '#ff1c8b' // 100% 处的颜色
+                    }],
+                    globalCoord: false // 缺省为 false
+                }
+            },
         }]
     };
 
@@ -44,19 +62,32 @@
 
     // 指定图表的配置项和数据
     var option1 = {
-        xAxis: {
-            type: 'category',
-            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-        },
-        yAxis: {
-            type: 'value'
-        },
-        series: [{
-            data: [820, 932, 901, 934, 1290, 1330, 1320],
-            type: 'line',
-            smooth: true
-        }]
-    };
+    xAxis: {
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [{
+        data: [820, 932, 901, 934, 1290, 1330, 1320],
+        type: 'line',
+        symbol: "circle",     
+        itemStyle : {
+                normal : {
+                    color:'#f9444d',
+                   
+                }
+            },
+         lineStyle:{
+            normal : {
+                    color:'#f9444d',
+                   
+                }
+            }
+    }]
+};
+
 
 
 
@@ -93,6 +124,7 @@
             data: ['周一','周二','周三','周四','周五','周六','周日']
         },
         series: [
+
             {
                 name: '直接访问',
                 type: 'bar',
@@ -102,6 +134,14 @@
                         show: true,
                         position: 'insideRight'
                     }
+
+                },
+                barWidth: 20,
+                itemStyle : {
+                normal : {
+                    barBorderRadius: [20,0,0,20],
+                    color:'#f9444d',
+                }
                 },
                 data: [320, 302, 301, 334, 390, 330, 320]
             },
@@ -115,6 +155,12 @@
                         position: 'insideRight'
                     }
                 },
+                barWidth: 20,
+                itemStyle : {
+                normal : {
+                    color:'#fa747b',
+                }
+                },
                 data: [120, 132, 101, 134, 90, 230, 210]
             },
             {
@@ -127,20 +173,15 @@
                         position: 'insideRight'
                     }
                 },
+                barWidth: 20,
+                itemStyle : {
+                normal : {
+                    color:'#fb8f94',
+                }
+                },
                 data: [220, 182, 191, 234, 290, 330, 310]
             },
-            {
-                name: '视频广告',
-                type: 'bar',
-                stack: '总量',
-                label: {
-                    normal: {
-                        show: true,
-                        position: 'insideRight'
-                    }
-                },
-                data: [150, 212, 201, 154, 190, 330, 410]
-            },
+            
             {
                 name: '搜索引擎',
                 type: 'bar',
@@ -151,8 +192,17 @@
                         position: 'insideRight'
                     }
                 },
+                barWidth: 20,
+                itemStyle : {
+
+                normal : {
+                    barBorderRadius: [0,20,20,0],
+                    color:'#fdb4b8',
+                }
+                },
                 data: [820, 832, 901, 934, 1290, 1330, 1320]
-            }
+            },
+
         ]
     };
 
